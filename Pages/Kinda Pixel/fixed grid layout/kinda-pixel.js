@@ -1,8 +1,7 @@
  // import * as shape from './shapeDraw.js';
-import {square} from 'shapeDraw.js';
+// import {square} from 'shapeDraw.js';
  
- 
-function drawShape() {};
+
 
 var getMyCanvas = document.getElementById('myCanvas');
 	var queryMyCanvas = document.querySelector('#myCanvas');
@@ -17,6 +16,7 @@ var getMyCanvas = document.getElementById('myCanvas');
 	var queryBody = document.querySelector("body");
 
 	var canvasScale = 1;
+  var mouseDown = false;
 	
 	
 	
@@ -53,9 +53,10 @@ function mouseCanvas(event) {
 	let y = (event.pageY - rect.top)/canvasScale;
 document.getElementById("coords").innerHTML = "canvasX: " + x + ", canvasY: " + y;
 	
-	let sz = 100;
+	let sz = 10;
 	
-	shape.square(ctx);
+  ctx.fillRect(x-(sz/2), y-(sz/2), sz, sz);
+	// shape.square(ctx);
 
 }
 
@@ -65,16 +66,19 @@ document.getElementById("coords").innerHTML = "canvasX: " + x + ", canvasY: " + 
  
 
 queryMyCanvas.addEventListener("mousedown", event => {
-	event.preventDefault()
+  mouseDown=true;
+	event.preventDefault();
 	mouseCanvas(event);
 });
 queryMyCanvas.addEventListener("mousemove", event => {
-	event.preventDefault()
-	mouseCanvas(event);
+  if (mouseDown == true) {
+    event.preventDefault()
+	  mouseCanvas(event);
+  }
 });
 queryMyCanvas.addEventListener("mouseup", event => {
-	event.preventDefault()
-	mouseCanvas(event);
+  mouseDown=false;
+	event.preventDefault();
 });
 queryMyCanvas.addEventListener("touch", event => {
 	event.preventDefault()

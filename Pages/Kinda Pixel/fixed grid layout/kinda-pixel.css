@@ -28,7 +28,15 @@
 /*	display: grid;
 	align-items: center;
 	justify-content: center;*/
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+  
 }
+
+.middle::-webkit-scrollbar {
+  display: none;
+}
+
  
 .bottom {
 	background-color: purple;
