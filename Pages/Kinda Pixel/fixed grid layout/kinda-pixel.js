@@ -1,11 +1,9 @@
- // import * as shape from './shapeDraw.js';
-// import {square} from 'shapeDraw.js';
- 
+import * as shape from "./shapeDraw.js";
 
 
 var getMyCanvas = document.getElementById('myCanvas');
-	var queryMyCanvas = document.querySelector('#myCanvas');
-	const ctx = getMyCanvas.getContext("2d");
+var queryMyCanvas = document.querySelector('#myCanvas');
+const ctx = getMyCanvas.getContext("2d");
 
 	var getCenterButton = document.getElementById('centerButton');
 	var queryCenterButton = document.querySelector('#centerButton');
@@ -15,20 +13,24 @@ var getMyCanvas = document.getElementById('myCanvas');
 
 	var queryBody = document.querySelector("body");
 
-	var canvasScale = 1;
-  var mouseDown = false;
+	var canvasScale = 0.5;
+  let mouseDown = false;
 	
 	
 	
 
 
 window.onload = function() {
+	getMyCanvas.style.transform = 
+	'scale('+canvasScale+','+canvasScale+')';
   getMyCanvas.scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
 };
 
 
 queryCenterButton.addEventListener("click", e => {
-	canvasScale = 1;
+	
+	
+	canvasScale = 0.5;
 	queryRange.value = canvasScale;
 	printRange.textContent = canvasScale;
 	
@@ -46,17 +48,18 @@ queryRange.addEventListener( "input" , (event) => {
 	'scale('+canvasScale+', '+canvasScale+')';
 	});
 	
+let deg = 0;
+let sz = 10;
+let myX = 0;
+let myY = 0;
+let rect = 0;
 
 function mouseCanvas(event) {
-	let rect = queryMyCanvas.getBoundingClientRect();
-	let x = (event.pageX - rect.left)/canvasScale;
-	let y = (event.pageY - rect.top)/canvasScale;
-document.getElementById("coords").innerHTML = "canvasX: " + x + ", canvasY: " + y;
-	
-	let sz = 10;
-	
-  ctx.fillRect(x-(sz/2), y-(sz/2), sz, sz);
-	// shape.square(ctx);
+	rect = queryMyCanvas.getBoundingClientRect();
+	myX = (event.pageX - rect.left)/canvasScale;
+	myY = (event.pageY - rect.top)/canvasScale;
+ document.getElementById("coords").innerHTML = "canvasX: " + myX + ", canvasY: " + myY;
+
 
 }
 
@@ -65,30 +68,42 @@ document.getElementById("coords").innerHTML = "canvasX: " + x + ", canvasY: " + 
 
  
 
-queryMyCanvas.addEventListener("mousedown", event => {
+// queryMyCanvas.addEventListener("mousedown", event => {
+//   mouseDown=true;
+// 	event.preventDefault();
+// 	mouseCanvas(event);
+// 	shape.start(ctx, myX, myY);
+// });
+// queryMyCanvas.addEventListener("mousemove", event => {
+//   if (mouseDown == true) {
+//     event.preventDefault();
+// 		mouseCanvas(event);
+// 	  shape.move(ctx, myX, myY);
+//   }
+// });
+// queryMyCanvas.addEventListener("mouseup", event => {
+//   mouseDown=false;
+// 	event.preventDefault();
+// 	shape.end(ctx)
+// });
+
+
+
+queryMyCanvas.addEventListener("touchstart", event => {
   mouseDown=true;
 	event.preventDefault();
 	mouseCanvas(event);
-});
-queryMyCanvas.addEventListener("mousemove", event => {
-  if (mouseDown == true) {
-    event.preventDefault()
-	  mouseCanvas(event);
-  }
-});
-queryMyCanvas.addEventListener("mouseup", event => {
-  mouseDown=false;
-	event.preventDefault();
-});
-queryMyCanvas.addEventListener("touch", event => {
-	event.preventDefault()
-	mouseCanvas(event);
+	shape.start(ctx, myX, myY);
 });
 queryMyCanvas.addEventListener("touchmove", event => {
-	event.preventDefault()
-	mouseCanvas(event);
+  if (mouseDown == true) {
+    event.preventDefault();
+		mouseCanvas(event);
+	  shape.move(ctx, myX, myY, sz);
+	}
 });
 queryMyCanvas.addEventListener("touchstop", event => {
-	event.preventDefault()
-	mouseCanvas(event);
+  mouseDown=false;
+	event.preventDefault();
+	shape.end(ctx)
 });
