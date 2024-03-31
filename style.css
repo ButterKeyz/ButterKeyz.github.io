@@ -1,0 +1,51 @@
+
+:root{
+    --background-color: black;
+    --text-color: white;
+    --heading-color-text: purple;
+    
+}
+
+
+*,
+*::before,
+*::after{   box-sizing: border-box; }
+
+body {
+    background-color: var(--background-color);
+    padding: 0;
+    margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--heading-color-text);
+}
+
+p {
+    margin: 1em;
+    font-size: 2rem;
+        text-align: center;
+        color: var(--text-color);
+}
+
+img {
+
+}
+
+/* link */
+strong {
+
+}
+em {
+
+}
+span{
+    /* underline */
+}
+hr {
+    
+}
+
+.page{
+
+}
