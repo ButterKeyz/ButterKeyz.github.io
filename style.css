@@ -14,7 +14,9 @@ body {
   background-color: var(--background-color);
   padding: 0;
   margin: 0;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 h1,
@@ -29,7 +31,6 @@ h6 {
 p {
   margin: 1em;
   font-size: 2rem;
-  text-align: center;
   color: var(--text-color);
 }
 
@@ -48,4 +49,5 @@ hr {
 }
 
 .page {
+  text-align: center;
 }
