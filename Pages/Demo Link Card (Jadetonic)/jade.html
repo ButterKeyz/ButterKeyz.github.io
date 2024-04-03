@@ -1,0 +1,205 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<link href="https://meyerweb.com/eric/tools/css/reset/reset.css" rel="stylesheet" />
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&family=Unica+One&display=swap" rel="stylesheet">
+	<title>Jadetonic</title>
+	<!-- keywords for search, maybe other stuff-->
+<style>
+
+	:root { 
+		--color-card-background: #1E1623;
+		--color-text-bright: white;
+		--color-text-neutral: #E5BC94;
+		--color-accent: red;
+		--color-accent-2: maroon;
+		--image-background: 
+				url("jade_banner.png");
+		--image-pfp: 
+				url("https://yt3.googleusercontent.com/a-40eGykEtHpAP2Qt1EXz_EySLKhy64UyqIxglBqw72DWc_uwDNokm9GaY7P085c4S-rBicdHg=s176-c-k-c0x00ffffff-no-rj");
+	/*font-family: "Rajdhani", sans-serif;
+  font-weight: 300 -4-5-6-700*/
+	/*font-family: "Unica One", sans-serif;
+	font-weight: 400;*/
+	}
+	/*	hr {
+		border: 0 solid transparent;
+		border-top: 0.35em dotted var(--color-accent-2);
+		flex-grow: 1;
+		width: 100%;
+		opacity: 10%;
+		}*/
+	 /*border: 0.1em solid rgba(0, 0, 72, 1);*/
+	/*text-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue;*/
+	
+	*, *::before, *::after { 
+		box-sizing: border-box; 
+	}
+	html {
+		min-height: 100%;
+	}
+
+	body {
+		padding: 0;
+		margin: 0;
+		background-image: var(--image-background);
+			background-position: center;
+			background-size: cover;
+			background-repeat: no-repeat;
+			filter: blur(50%);
+		display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+	}	
+	
+	h1 {
+		display: inline-block;
+		font-size: 2.5rem;
+			font-family: "Unica One", sans-serif;
+			font-weight: 400;
+			font-style: normal;
+			color: var(--color-text-bright)
+	}
+	
+		h1::first-letter {
+			font-size: 3.75rem;
+			vertical-align: middle;
+		}
+		
+	h2 {
+		font-size: 0.7rem;
+			font-family: "Rajdhani", sans-serif;
+  		font-weight: 500; 
+  		font-style: normal;
+			letter-spacing: 0.25em;
+		translate: 0 -0.75em;
+	}
+
+
+	.card {
+		margin: 2em;
+		padding: 3em;
+		background-color: var(--color-card-background);
+		border-radius: 1em;
+  	font-family: "Rajdhani", sans-serif;
+			font-weight: 400;
+ 			font-style: normal;
+			color: var(--color-text-neutral);
+		display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+		box-shadow: 0 0.3em 0.5em black;
+	}
+	
+	.pfp {
+    width: 50%;
+		height: auto;
+		border-radius: 50%;
+		box-shadow: 0 0 0.5em 0.3em black;
+	}
+	
+	.link-container {
+		margin: 1em 0 1em 0;
+		font-family: "Rajdhani", sans-serif;
+			font-weight: 400;
+ 			font-style: normal;
+		width: 100%;
+		display: flex;
+			flex-direction: row;
+			align-items: center;
+			justify-content: space-evenly;
+	}
+	
+	.icon {
+		width: 3em;
+		height: 3em;
+	  padding: 0.5em;
+		margin: 0.25em;
+		font-size: 1.5rem;
+		  font-family: "Rajdhani", sans-serif;
+			font-weight: 700;
+ 			font-style: normal;
+			text-align: center;
+	  background-color: var(--color-text-bright);
+		border: 0 solid transparent;
+		border-radius: 50%;
+		box-shadow: inset 0.1em 0.1em 0.3em rgba(255, 0, 0, 0.5),
+		0 0 0.3em 0.1em black
+		;
+		background-position: center;
+			background-size: cover;
+			background-repeat: no-repeat;
+	}
+		.icon.a {
+			background-image: url("https://cdn-icons-png.flaticon.com/512/2168/2168336.png");
+		}
+		.icon.b {
+			background-image: url("https://cdn-icons-png.flaticon.com/512/4401/4401448.png");
+		}
+		.icon.c {
+			background-image: url("https://cdn-icons-png.flaticon.com/512/3669/3669688.png");
+		}
+		
+	.large-button {
+		font-family: "Rajdhani", sans-serif;
+			font-weight: 600;
+ 			font-style: normal;
+			font-size: 1.5rem;
+			color: var(--color-text-bright);
+			text-align: center;
+			letter-spacing: 0.1em;
+	  background-color: black;
+		border: 0 solid transparent;
+		border-radius: 0.5em;
+		box-shadow: inset 0.1em 0.1em 0.3em rgba(255, 0, 0, 0.5), 0 0 0.3em 0.1em black;
+	  padding: 0.05em;
+		margin: 0.1em;
+		width: 90%;
+		height: 2em;
+	}
+		
+	.email {
+		font-size: 0.7rem;
+			font-weight: 600;
+			letter-spacing: 0.1em;
+		opacity: 50%;
+		margin: 1em 0 0 0;
+	}
+	
+</style>
+</head>
+<body>
+	<div class="card">
+		<img class="pfp" src="https://yt3.googleusercontent.com/a-40eGykEtHpAP2Qt1EXz_EySLKhy64UyqIxglBqw72DWc_uwDNokm9GaY7P085c4S-rBicdHg=s176-c-k-c0x00ffffff-no-rj" />
+		<div>
+			<h1>JADETONI</h1><h1>C</h1>
+		</div>
+		<h2>CONTENT CREATOR</h2>
+		<div class="link-container">
+			<a href="twitter">
+				<button class="icon a"></button>
+			</a>
+			<a href="twitter">
+				<button class="icon b"></button>
+			</a>
+			<a href="twitter">
+				<button class="icon c"></button>
+			</a>
+		</div>
+		<button class="large-button">
+			Discord
+		</button>
+		<p class="email">
+			jadetonicbusiness@gmail.com
+		</p>
+	</div>
+	
+	<script></script>
+</body>
+</html>
