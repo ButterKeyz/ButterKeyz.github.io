@@ -1,3 +1,8 @@
+
+function myAlert(){ alert('hello');}
+myAlert();
+alert("Hello, World!");
+
 import * as shape from "./shapeDraw.js";
 
 
