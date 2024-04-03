@@ -4,7 +4,7 @@
   --color-text-neutral: #e5bc94;
   --color-accent: red;
   --color-accent-2: maroon;
-  --image-background: url("jade_banner.png");
+  --image-background: url(./jade_banner.png);
   --image-pfp: url("https://yt3.googleusercontent.com/a-40eGykEtHpAP2Qt1EXz_EySLKhy64UyqIxglBqw72DWc_uwDNokm9GaY7P085c4S-rBicdHg=s176-c-k-c0x00ffffff-no-rj");
   --font-unica: "Unica One", sans-serif;
   --font-raj: "Rajdhani", sans-serif;
@@ -108,27 +108,23 @@ body {
   background-position: center;
   background-size: 60%;
   background-repeat: no-repeat;
-  transition: transform 0.5s ease, background-color 0.25s ease-out;
 }
 .icon.a {
-  background-image: url("./twitter.png");
+  background-image: url(./twitter.png);
 }
 .icon.b {
-  background-image: url("./twitch.png");
+  background-image: url(./twitch.png);
 }
 .icon.c {
-  background-image: url("./youtube.png");
+  background-image: url(./youtube.png);
 }
+@media (portrait:landscape){
 .icon:hover {
-  background-color: crimson;
-  transform: scale(110%) rotate(0deg);
+	background-color: crimson;
+	transform: scale(1.1) rotate(0deg);
+	transition: transform 0.5s ease, background-color 0.25s ease-out;
+	}
 }
-.icon:focus {
-  box-shadow: 0 0 0.3em white;
-  transform: scale(110%) rotate(360deg);
-  transition: transform 0.2 ease, background-color 0.25s ease-out;
-}
-
 .large-button {
   font-family: "Rajdhani", sans-serif;
   font-weight: 600;
@@ -167,6 +163,7 @@ body {
   background-color: rgba(0, 0, 0, 0.1);
   overflow: hidden;
   backdrop-filter: blur(2px);
+	-webkit-backdrop-filter: blur(2px);
 }
 
 .loader {
@@ -179,13 +176,14 @@ body {
   align-items: center;
   justify-content: center;
   background-color: maroon;
-  transition: opacity 0.75s ease-out, visibility 0.75s ease-out, scale 0.75s ease;
+  transition: opacity 0.75s ease-out, visibility 0.75s ease-out, scale 0.75s ease/*, background-color 0.75s ease*/;
 }
 
 .loader-hidden {
-  opacity: 0;
+	opacity: 0;
   visibility: hidden;
   scale: 1.1;
+	/*background-color: transparent;*/
 }
 
 .loader::after {
@@ -198,10 +196,32 @@ body {
   image-rendering: pixelated;
   image-rendering: -moz-crisp-edges;
   image-rendering: crisp-edges;
-  animation: loading 0.75s ease-out alternate infinite; */
+  animation: loading 0.75s ease-out alternate infinite;
 }
 
 @keyframes loading {
     from{  transform: scale(1);  }
     to{  transform: scale(1.05);  }
 }
+
+@keyframes button-push {
+	0%{}
+	25%{box-shadow: 0 0 0.3em white;
+		transform: scale(1.1) rotate(360deg);
+		background-color: crimson;}
+	75%{box-shadow: 0 0 0.3em white;
+		transform: scale(1.1) rotate(360deg);
+		background-color: crimson;}
+	100%{}
+}
+
+@keyframes button-hover {
+	0%{}
+	100%{background-color: crimson;
+		transform: scale(1.1);}
+}
+
+
+/*  box-shadow: 0 0 0.3em white;
+  transform: scale(1.1) rotate(360deg);
+  transition: transform 0.2s ease, background-color 0.25s ease-out;*/

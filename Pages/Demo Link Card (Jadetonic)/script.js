@@ -1,19 +1,32 @@
 //***delay open link... so see animation lol***
-function delay(URLtwitter) {
+function delay(URL) {
   setTimeout(function () {
-    window.location = "https://twitter.com/Jadetonic";
+    window.location = URL;
   }, 500);
+};
+
+var icon = document.querySelector(".icon");
+// icon.onmouseover = function(){
+// 	this.style.animation = "button-hover 0.5s ease 0.01s";
+// }
+// icon.onmouseout = function(){
+// 	this.style.animation = "button-hover 0.5s ease 0.01s 1 reverse";
+// }
+icon.onclick = function(){
+	this.style.animation = "button-push 2s ease 0.01s";
 }
-function delay(URLtwitch) {
+
+//loading screen remove
+//window.addEventListener("load", 
+window.addEventListener("load", () => {
+  var loader = document.querySelector(".loader");
   setTimeout(function () {
-    window.location = "https://www.twitch.tv/jadetonic";
-  }, 500);
-}
-function delay(URLyoutube) {
-  setTimeout(function () {
-    window.location = "https://www.youtube.com/c/jadetonic";
-  }, 500);
-}
+    loader.classList.add("loader-hidden");
+  loader.addEventListener("transitionend", () => {
+	    loader.remove();
+		});
+  }, 500); 	
+});
 
 //***blur background on card hover***
 
@@ -22,15 +35,4 @@ function delay(URLyoutube) {
 // card.onmouseover = function(){
 // 	filter.style.backdropFilter = "blur(2px)";  };
 // card.onmouseout = function(){
-// 	filter.style.backdropFilter = "blur(0px)";  }
-
-window.addEventListener("load", () => {
-  const loader = document.querySelector(".loader");
-  setTimeout(function () {
-    loader.classList.add("loader-hidden");
-
-    loader.addEventListner("transitionend", () => {
-        document.body.removeChild("loader");
-     });
-  }, 250);
-});
+	// 	filter.style.backdropFilter = "blur(0px)";  }
