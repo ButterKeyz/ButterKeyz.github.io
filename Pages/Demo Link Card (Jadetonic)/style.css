@@ -5,7 +5,6 @@
   --color-accent: red;
   --color-accent-2: maroon;
   --image-background: url(./jade_banner.png);
-  --image-pfp: url("https://yt3.googleusercontent.com/a-40eGykEtHpAP2Qt1EXz_EySLKhy64UyqIxglBqw72DWc_uwDNokm9GaY7P085c4S-rBicdHg=s176-c-k-c0x00ffffff-no-rj");
   --font-unica: "Unica One", sans-serif;
   --font-raj: "Rajdhani", sans-serif;
   --font-h1-size: 2.5rem;
@@ -118,13 +117,16 @@ body {
 .icon.c {
   background-image: url(./youtube.png);
 }
-@media (portrait:landscape){
+/*@media ( orientation:landscape ){*/
 .icon:hover {
-	background-color: crimson;
+	animation: button-hover 0.25s ease-out 0.01s 1 forwards;
+	
+	/*background-color: crimson;
 	transform: scale(1.1) rotate(0deg);
-	transition: transform 0.5s ease, background-color 0.25s ease-out;
+	transition: transform 0.5s ease, background-color 0.25s ease-out;*/
+	
 	}
-}
+/*}*/
 .large-button {
   font-family: "Rajdhani", sans-serif;
   font-weight: 600;
@@ -176,14 +178,13 @@ body {
   align-items: center;
   justify-content: center;
   background-color: maroon;
-  transition: opacity 0.75s ease-out, visibility 0.75s ease-out, scale 0.75s ease/*, background-color 0.75s ease*/;
+  transition: opacity 0.75s ease-out, visibility 0.75s ease-out, scale 0.75s ease;
 }
 
 .loader-hidden {
 	opacity: 0;
   visibility: hidden;
   scale: 1.1;
-	/*background-color: transparent;*/
 }
 
 .loader::after {
@@ -197,6 +198,10 @@ body {
   image-rendering: -moz-crisp-edges;
   image-rendering: crisp-edges;
   animation: loading 0.75s ease-out alternate infinite;
+}
+
+.loader.hidden {
+	
 }
 
 @keyframes loading {
