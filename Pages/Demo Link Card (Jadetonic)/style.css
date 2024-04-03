@@ -110,9 +110,15 @@ body {
   background-repeat: no-repeat;
   transition: transform 0.5s ease, background-color 0.25s ease-out;
 }
-.icon.a {  background-image: url("./twitter.png");  }
-.icon.b {  background-image: url("./twitch.png");  }
-.icon.c {  background-image: url("./youtube.png");  }
+.icon.a {
+  background-image: url("./twitter.png");
+}
+.icon.b {
+  background-image: url("./twitch.png");
+}
+.icon.c {
+  background-image: url("./youtube.png");
+}
 .icon:hover {
   background-color: crimson;
   transform: scale(110%) rotate(0deg);
@@ -173,28 +179,29 @@ body {
   align-items: center;
   justify-content: center;
   background-color: maroon;
-  transition: opacity 1s ease-out, visibility 1s ease-out, scale 1s ease;
+  transition: opacity 0.75s ease-out, visibility 0.75s ease-out, scale 0.75s ease;
 }
 
 .loader-hidden {
   opacity: 0;
   visibility: hidden;
-  scale: 1.2;
+  scale: 1.1;
 }
 
 .loader::after {
-    content: "";
-    background-image: url(./JT_Pixel_Art.png);
-    background-size: cover;
-    width: 20vw;
-    height: 20vw;
-    image-rendering: pixelated;
-    image-rendering: -moz-crisp-edges;
-    image-rendering: crisp-edges;
-    /* animation: loading 0.75s ease infinite; */
+  content: "";
+  background-image: url(./JT_Pixel_Art.png);
+  background-size: cover;
+  opacity: 100%;
+  width: clamp(0px, 50vw, 50vh);
+  height: clamp(0px, 50vh, 50vw);
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+  animation: loading 0.75s ease-out alternate infinite; */
 }
 
-/* @keyframes loading {
-    from{  transform: rotate(0deg);  }
-    to{  transform: rotate(360deg);  }
-} */
+@keyframes loading {
+    from{  transform: scale(1);  }
+    to{  transform: scale(1.05);  }
+}

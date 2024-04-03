@@ -1,4 +1,3 @@
-
 //***delay open link... so see animation lol***
 function delay(URLtwitter) {
   setTimeout(function () {
@@ -26,11 +25,12 @@ function delay(URLyoutube) {
 // 	filter.style.backdropFilter = "blur(0px)";  }
 
 window.addEventListener("load", () => {
-    const loader = document.querySelector(".loader");
-
+  const loader = document.querySelector(".loader");
+  setTimeout(function () {
     loader.classList.add("loader-hidden");
 
     loader.addEventListner("transitionend", () => {
         document.body.removeChild("loader");
-    })
-})
+     });
+  }, 250);
+});
